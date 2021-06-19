@@ -35,6 +35,8 @@ class DbDataProvider(
     suspend fun getListsByUserName(pseudo: String) = userWithListsDao.getListsByUserName(pseudo)
 
     suspend fun addUpdateNewItem(newItemDb: ItemDb) = itemDao.addUpdateNewItem(newItemDb)
+    
+    suspend fun deleteItemById(itemId: String) = itemDao.deleteItemById(itemId)
 
     suspend fun addUpdateNewItems(newItemsDb: List<ItemDb>) = itemDao.addUpdateNewItems(newItemsDb)
 

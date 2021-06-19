@@ -15,4 +15,8 @@ interface ItemDao {
     // add new items or update items in db
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun addUpdateNewItems(newItemsDb: List<ItemDb>)
+    
+    // delete items
+    @Query("DELETE FROM items WHERE itemId = :itemId")
+    suspend fun deleteItemById(itemId: String)
 }
